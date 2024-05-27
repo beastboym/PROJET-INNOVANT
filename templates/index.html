@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PageRank Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>PageRank Results</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>PageRank</th>
+            <th>Occurrences</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for page, rank in ranked_pages %}
+          <tr>
+            <td><a href="{{ page }}" target="_blank">{{ page }}</a></td>
+            <td>{{ rank|round(4) }}</td>
+            <td>{{ outlinks_count[page] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  </body>
+</html>
