@@ -93,8 +93,7 @@ pagerank_app/
 └── static/
     ├── css/
     │   └── styles.css      # Fichier CSS pour les styles
-    └── js/
-        └── scripts.js      # Fichier JavaScript (actuellement vide)
+    
 ```
 
 ## Fonctionnement
